@@ -1,5 +1,6 @@
 package Tutor_2;
 
+//Tabari Harvey,04/11/2025, Module-6 Programming Assignment
 
 public class Fan {
 
