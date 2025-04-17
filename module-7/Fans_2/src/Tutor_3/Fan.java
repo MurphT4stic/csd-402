@@ -1,4 +1,4 @@
-package Tutor_2;
+package Tutor_3;
 
 //Tabari Harvey,04/11/2025, Module-6 Programming Assignment
 
@@ -16,7 +16,7 @@ public class Fan {
     private double radius = 6;
     private String color = "white";
 
-//no-argument constructor sets all fields with a default value
+    //no-argument constructor sets all fields with a default value
     public Fan() {
 
     }
@@ -28,7 +28,7 @@ public class Fan {
         this.color = color;
     }
 
-//Getters start here
+    //Getters start here
     public int getSpeed() {
         return speed;
     }
@@ -59,17 +59,31 @@ public class Fan {
     public void setColor(String color) {
         this.color = color;
     }
-
-    public class useFans {
-        public static void displayFans(Fan fan) {
-            System.out.println(fan.getSpeed() + " " + fan.isOn() + " " + fan.getRadius());
+    @Override
+    public String toString() {
+        if (on) {
+            String speedString = "";
+            switch (speed) {
+                case SLOW:
+                    speedString = "Slow";
+                    break;
+                case MEDIUM:
+                    speedString = "Medium";
+                    break;
+                case FAST:
+                    speedString = "Fast";
+                    break;
+                case STOPPED:
+                    speedString = "Stopped";
+                    break;
+            }
+            // Return a string describing the fan's on state, speed, radius, and color.
+            return "Fan is on, speed is " + speedString + ", radius is " + radius + ", color is " + color;
+        } else {
+            // Return a string describing the fan's off state, radius, and color.
+            return "Fan is off, radius is " + radius + ", color is " + color;
         }
     }
-
-
-
-
-
     public static void main(String[] args) {
         // Create the first Fan object using the default constructor.
         Fan fan1 = new Fan();
@@ -103,7 +117,7 @@ public class Fan {
         System.out.println("\nFan 2 (After using setters):");
         System.out.println(fan2.toString()); // Print the updated state of fan2.
     }
-    }
+}
 
 
 
